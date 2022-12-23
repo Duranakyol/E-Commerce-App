@@ -1,12 +1,20 @@
-import React from "react";
 import "./App.css";
-import Navbar from "./Components/Navbar";
+import Navbar from "./components/Navbar";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import Products from "./pages/Products";
+import Login from "./pages/Auth/Login";
+import Register from "./pages/Auth/Register";
 
 function App() {
   return (
-    <div className="App">
+    <Router className="App">
       <Navbar />
-    </div>
+      <Routes>
+        <Route path="/" exact element={<Products />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </Router>
   );
 }
 
